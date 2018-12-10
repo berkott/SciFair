@@ -1,0 +1,14 @@
+Firebase, mongoDb ← easier alterantives 
+Json ← Javascript obejct notation
+
+App Development 
+    Getting data from the muse to the app
+    Data goes to the cloud 
+    App sees the data and uses it to
+
+*** Do android and then use node js to send to firebase or whatever
+JK CHECK OUT WHAT CAN BE DONE WITH JS BELOW FIRST
+
+Links:
+ - https://www.npmjs.com/package/react-native-libmuse
+ - https://github.com/jihyunlee/muse
