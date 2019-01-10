@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Epworth</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Instructions</h1>
+  <p>
+      How likely are you to doze off or fall asleep in the following situations, 
+      in contrast to feeling just tired? This refers to your usual way of 
+      life in recent times. Even if you have not done some of these things 
+      recently try to work out how they would have affected you. Use the 
+      following scale to choose the most appropriate number for each situation.
+  </p>
+  <p>
+    0 = would never doze
+    <br/>
+    1 = slight chance of dozing
+    <br/>
+    2 = moderate chance of dozing
+    <br/>
+    3 = high chance of dozing
+    <br/>
+  </p>
+
+  <ion-list>
+      <ion-list-header>
+        Sitting and reading
+      </ion-list-header>
+      <ion-item>
+        <ion-range pin="true" [(ngModel)]="val1" min="0" max="3">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">3</ion-label>
+        </ion-range>
+      </ion-item>
+  </ion-list>
+  
+  <ion-list>
+      <ion-list-header>
+        Watching TV
+      </ion-list-header>
+      <ion-item>
+        <ion-range pin="true" [(ngModel)]="val2" min="0" max="3">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">3</ion-label>
+        </ion-range>
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+      <ion-list-header>
+        Sitting, inactive, in a public place (e.g., a theater or a meeting)
+      </ion-list-header>
+      <ion-item>
+        <ion-range pin="true" [(ngModel)]="val3" min="0" max="3">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">3</ion-label>
+        </ion-range>
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+      <ion-list-header>
+        As a passenger in a car for an hour without a break
+      </ion-list-header>
+      <ion-item>
+        <ion-range pin="true" [(ngModel)]="val4" min="0" max="3">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">3</ion-label>
+        </ion-range>
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+      <ion-list-header>
+        Lying down to rest in the afternoon when circumstances permit
+      </ion-list-header>
+      <ion-item>
+        <ion-range pin="true" [(ngModel)]="val5" min="0" max="3">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">3</ion-label>
+        </ion-range>
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+      <ion-list-header>
+        Sitting and talking with someone
+      </ion-list-header>
+      <ion-item>
+        <ion-range pin="true" [(ngModel)]="val6" min="0" max="3">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">3</ion-label>
+        </ion-range>
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+      <ion-list-header>
+        Sitting quietly after a lunch without alcohol
+      </ion-list-header>
+      <ion-item>
+        <ion-range pin="true" [(ngModel)]="val7" min="0" max="3">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">3</ion-label>
+        </ion-range>
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+      <ion-list-header>
+        In a car, while stopped for a few minutes in traffic
+      </ion-list-header>
+      <ion-item>
+        <ion-range pin="true" [(ngModel)]="val8" min="0" max="3">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">3</ion-label>
+        </ion-range>
+      </ion-item>
+  </ion-list>
+
+  <div class="Button">
+    <ion-button (click)='submit();'>Submit</ion-button>
+  </div>
+  
+</ion-content>

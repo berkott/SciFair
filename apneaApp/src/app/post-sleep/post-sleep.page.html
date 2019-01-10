@@ -1,0 +1,191 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Post Sleep</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Instructions</h1>
+  <p>
+      Please answer all of the following questions honestly:
+      <br/>
+      This survey was provided by Emory Hospital JC
+  </p>
+
+  <ion-list>
+      <ion-list-header>
+        How long do you think it took you to fall asleep last night? (Minutes)
+      </ion-list-header>
+      <ion-item>
+        <ion-range pin="true" [(ngModel)]="val1" min="0" max="240">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">240</ion-label>
+        </ion-range>
+      </ion-item>
+  </ion-list>
+  
+  <ion-list>
+      <ion-list-header>
+        What is the total time you think you spent asleep? (Hours)
+      </ion-list-header>
+      <ion-item>
+        <ion-range pin="true" [(ngModel)]="val2" min="0" max="24">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">24</ion-label>
+        </ion-range>
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+      <ion-list-header>
+          How does this time compare to your usual time asleep
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Answer:</ion-label>
+        <ion-select [(ngModel)]="val3" placeholder="Select One">
+          <ion-select-option value="1">Same</ion-select-option>
+          <ion-select-option value="2">Longer</ion-select-option>
+          <ion-select-option value="3">Shorter</ion-select-option>
+        </ion-select>
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+      <ion-list-header>
+          How would you say your sleep last night compares with your typical night?
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Answer:</ion-label>
+        <ion-select [(ngModel)]="val4" placeholder="Select One">
+          <ion-select-option value="1">Better</ion-select-option>
+          <ion-select-option value="2">Same</ion-select-option>
+          <ion-select-option value="3">Worse</ion-select-option>
+        </ion-select>
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+      <ion-list-header>
+        How many times do you remember waking up last night?
+      </ion-list-header>
+      <ion-item>
+        <ion-range pin="true" [(ngModel)]="val5" min="0" max="3">
+          <ion-label slot="start">0</ion-label>
+          <ion-label slot="end">10</ion-label>
+        </ion-range>
+      </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      How long were you awake during the night? (Hours)
+    </ion-list-header>
+    <ion-item>
+      <ion-range pin="true" [(ngModel)]="val6" step= "0.5" min="0" max="3">
+        <ion-label slot="start">0</ion-label>
+        <ion-label slot="end">24</ion-label>
+      </ion-range>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Do you remember and Dreams from last night?
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Answer:</ion-label>
+      <ion-select [(ngModel)]="val7" placeholder="Select One">
+        <ion-select-option value="1">Yes</ion-select-option>
+        <ion-select-option value="2">No</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+        If so, please briefly describe them:
+    </ion-list-header>
+    <ion-textarea [(ngModel)]="val71" placeholder="Describe:"></ion-textarea>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Did you get enough sleep?
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Answer:</ion-label>
+      <ion-select [(ngModel)]="val8" placeholder="Select One">
+        <ion-select-option value="longer">Too little</ion-select-option>
+        <ion-select-option value="same">Just right</ion-select-option>
+        <ion-select-option value="shorter">Too much</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Were you bothered by the equipment you wore?
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Answer:</ion-label>
+      <ion-select [(ngModel)]="val9" placeholder="Select One">
+        <ion-select-option value="1">Too little</ion-select-option>
+        <ion-select-option value="2">Just right</ion-select-option>
+        <ion-select-option value="3">Too much</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      If so, please explain:
+    </ion-list-header>
+    <ion-textarea [(ngModel)]="val91" placeholder="Describe:"></ion-textarea>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+      Check the statement that best describes how you feel right now:
+    </ion-list-header>
+    <ion-item>
+      <ion-label>Answer:</ion-label>
+      <ion-select [(ngModel)]="val10" placeholder="Select One">
+        <ion-select-option value="1">
+          Active and vital; alert; wide awake
+        </ion-select-option>
+        <ion-select-option value="2">
+          Functioning at a high level, but not at peak; able to concentrate
+        </ion-select-option>
+        <ion-select-option value="3">
+          Relaxed; awake; not at full alertness; responsive
+        </ion-select-option>
+        <ion-select-option value="4">
+          A little foggy; not at peak; let down
+        </ion-select-option>
+        <ion-select-option value="5">
+          Foggy; beginning to lose interest in remaining awake
+        </ion-select-option>
+        <ion-select-option value="6">
+          Sleepy; prefer to be lying down; fighting sleep; woozy
+        </ion-select-option>
+        <ion-select-option value="7">
+          Almost in a trance; sleep onset soon; losing struggle to remain awake
+        </ion-select-option>                    
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-list-header>
+        Please add any additional comments you might have:
+    </ion-list-header>
+    <ion-textarea [(ngModel)]="val11" placeholder="Describe:"></ion-textarea>
+  </ion-list>
+
+  <div class="Button">
+    <ion-button (click)='submit();'>Submit</ion-button>
+  </div>
+</ion-content>
