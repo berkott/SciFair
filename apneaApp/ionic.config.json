@@ -1,8 +1,0 @@
-{
-  "name": "apneaApp",
-  "integrations": {
-    "cordova": {}
-  },
-  "type": "angular",
-  "id": "37e66e12"
-}
