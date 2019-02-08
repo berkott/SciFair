@@ -1,14 +1,38 @@
 import pymongo
-from pymongo import MongoClient
 
-# write correct link
-client = MongoClient('mongodb://andrewxxxxmorgan%40gmail.com:\
-    my_password@stitch.mongodb.com:27020/?authMechanism=PLAIN&\
-    authSource=%24external&ssl=true&\
-    appName=imported_trackme-etjzr:mongodb-atlas:local-userpass')
+class client:
+    def __init__(self):
+        # write correct link
+        self.client = pymongo.MongoClient('mongodb://test:testingtesting123@cluster0-shard-00-00-g0o5k.mongodb.net:27017,cluster0-shard-00-01-g0o5k.mongodb.net:27017,cluster0-shard-00-02-g0o5k.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true')
 
-# fix this stuff
-db = client.trackme
-collection = db.comments
+    def checkNewData(self):
+        db = self.client.general
+        collection = db.checkState # correct this collection
+        returnData = collection.find_one()['done']
+        data = collection.find_one_and_replace({'done': 1}, {'done': 0})
 
-data = collection.find_one()
+        print(data)
+        return returnData
+        # pass
+
+    def getNewData(self, _db):
+        db = self.client[_db]
+        collection = db["answers"] # correct this collection
+        returnData = collection.find_one()
+
+        return returnData
+
+    def sendData(self, data):
+        db = self.client.general
+        collection = db.score # correct this collection
+        data = collection.find_one_and_replace({}, {
+            'score': data['score'],
+            'heartRate': data['heartRate'],
+            'breathing': data['breathing'],
+            'eeg': data['eeg']
+        })
+        print(data)
+
+# self.db = self.client.postSleep
+# self.collection = self.db.questions # correct this collection
+# print(self.collection.find_one())
