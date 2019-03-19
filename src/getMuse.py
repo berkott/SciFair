@@ -27,7 +27,7 @@ class getMuse:
 
     def moveNew(self):
         print("start")
-        subprocess.call("~/Code/SciFair/src/moveNew.sh", shell=True)
+        subprocess.call("~/Code/SciFair/src/bash/moveNew.sh", shell=True)
         print("end")
 
 
@@ -71,5 +71,5 @@ class getMuse:
         #     print(my_file.exists())
         #     time.sleep(1)
         print("start")
-        subprocess.call("~/Code/SciFair/src/moveDownload.sh", shell=True)
+        subprocess.call("~/Code/SciFair/src/bash/moveDownload.sh", shell=True)
         print("end")
