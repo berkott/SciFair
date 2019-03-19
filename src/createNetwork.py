@@ -7,10 +7,12 @@ from scipy.signal import butter, lfilter
 from scipy.signal import freqz
 import wfdb
 from butterworth import Butter
-from learningModels import ann
 import glob
 import os
 import random
+
+from learningModels import ann
+from learningModels import svm
 
 # Nodes in input,Nodes in hidden,Epochs,Batch Size,Hidden Layers,Time,mse,accuracy
 
@@ -156,6 +158,14 @@ def run():
     # hyperparameters = [1, 1, 1, 64, 3]
 
     for i in range(1000):
+        _xD, yD = unison_shuffled_copies(np.array(featureVector), np.array(y_data))
+        xD = normalize(_xD)
+        
+        supportVectorMachine = svm.svm()
+        supportVectorMachine.train(xD[:int(10197*PERCENTAGE_TRAIN)], yD[:int(10197*PERCENTAGE_TRAIN)])
+        supportVectorMachine.evaluate(xD[int(10197*PERCENTAGE_TRAIN) + 1:], yD[int(10197*PERCENTAGE_TRAIN) + 1:])
+
+    for i in range(1000):
         xD, yD = unison_shuffled_copies(np.array(featureVector), np.array(y_data))
         
         nodesInInput = random.randint(1,100)
@@ -171,6 +181,13 @@ def run():
         neuralNet.train(xD[:int(10197*PERCENTAGE_TRAIN)], yD[:int(10197*PERCENTAGE_TRAIN)])
         neuralNet.save()
         neuralNet.evaluate(xD[int(10197*PERCENTAGE_TRAIN) + 1:], yD[int(10197*PERCENTAGE_TRAIN) + 1:])
+
+def normalize(x):
+    for i in range(len(x)):
+        maxVal = np.amax(x[i])
+        for j in range(len(x[i])):
+            x[i][j] /= maxVal
+    return x
 
 
 def unison_shuffled_copies(a, b):
