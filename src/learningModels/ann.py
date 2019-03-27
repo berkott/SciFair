@@ -4,6 +4,7 @@ import glob
 import os
 import csv
 
+from sklearn.metrics import classification_report, confusion_matrix
 from keras.models import Sequential
 from keras.layers import Dense, Activation
 from keras.models import load_model
@@ -47,17 +48,23 @@ class ann:
                 int(time.time()),
                 loss_and_metrics[0], 
                 loss_and_metrics[1]])
+
+        y_pred = self.model.predict(x_test)
+        
+        print("TEST: ", y_test)
+        print("TEST: ", y_pred)
+        print(confusion_matrix(y_test, y_pred.argmax(axis=1)))
+        print(classification_report(y_test, y_pred.argmax(axis=1)))
             
     def save(self):
-        self.model.save("../models/ann" + str(int(time.time())) + ".h5")
+        self.model.save("../../models/ann" + str(int(time.time())) + ".h5")
 
     def load(self):
-        list_of_files = glob.glob('../models/ann*') # * means all if need specific format then *.csv
+        list_of_files = glob.glob('../../models/ann1553658225*') # * means all if need specific format then *.csv
         latest_file = max(list_of_files, key=os.path.getctime)
         print(latest_file)
         # self.model = load_model("../models/ann")
         self.model = load_model(latest_file)
 
     def predict(self, data):
-        # self.model.predict()
-        pass
+        return self.model.predict(data)
