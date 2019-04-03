@@ -60,11 +60,11 @@ class ann:
         self.model.save("../../models/ann" + str(int(time.time())) + ".h5")
 
     def load(self):
-        list_of_files = glob.glob('../../models/ann1553658225*') # * means all if need specific format then *.csv
-        latest_file = max(list_of_files, key=os.path.getctime)
-        print(latest_file)
+        list_of_files = glob.glob('/home/berk/Code/SciFair/models/ann1553835057.h5')
+        # latest_file = max(list_of_files, key=os.path.getctime)
+        # print(latest_file)
         # self.model = load_model("../models/ann")
-        self.model = load_model(latest_file)
+        self.model = load_model(list_of_files[0])
 
     def predict(self, data):
         return self.model.predict(data)

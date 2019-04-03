@@ -6,8 +6,11 @@ import numpy as np
 import glob
 
 class heart:
+
     def __init__(self):
-        self.data = hp.get_data(glob.glob('../assets/new/*PPG.csv')[0], column_name='ppg_2')
+        basePath = "/home/berk/Code/SciFair/src"
+        print(glob.glob(basePath + '/assets/new/FPPG.csv'))
+        self.data = hp.get_data(glob.glob(basePath + '/assets/new/FPPG.csv')[0], column_name='ppg_2')
         self.data = self.fixData(self.data)
         self.epoch = 64*30
 
@@ -55,3 +58,7 @@ class heart:
 
         print("Heart score: ", score)
         return score
+
+# heartH = heart()
+
+# heartH.getResult()

@@ -205,8 +205,8 @@ def run():
         nodesInInput = 10
         nodesInHidden = 20
         # epochs = random.randint(1,5)*1000
-        # epochs = 1000
-        epochs = 100
+        epochs = 1000
+        # epochs = 100
         # batchSize = random.randint(1,8)*16
         batchSize = 64
         hiddenLayers = 1

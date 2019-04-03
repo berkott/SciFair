@@ -7,7 +7,8 @@ import glob
 
 class breath:
     def __init__(self):
-        self.data = hp.get_data(glob.glob('../assets/new/*PPG.csv')[0], column_name='ppg_2')
+        basePath = "/home/berk/Code/SciFair/src"
+        self.data = hp.get_data(glob.glob(basePath + '/assets/new/FPPG.csv')[0], column_name='ppg_2')
         self.data = self.fixData(self.data)
         self.epoch = 64*30
 

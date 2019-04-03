@@ -13,7 +13,7 @@ class evaluate:
 
         self.heart = heart.heart()
         self.breath = breath.breath()
-        self.eeg = eeg.eeg()
+        self.eeg = eeg.eeg("ann", "_")
         
 
     def getResults(self, epworth, stopBang, weights):

@@ -54,7 +54,7 @@ class getMuse:
         # browser.find_elements_by_tag_name('input')[2].click()
 
         # TODO: make elements only from the right time
-        self.browser.find_elements_by_tag_name('input')[5].click()
+        self.browser.find_elements_by_tag_name('input')[1].click()
 
         time.sleep(1)
         self.browser.find_element_by_xpath('//*[@id="app"]/div/div[2]/div[2]/div/div/div[1]/div[1]/button/div/div/span').click()
@@ -70,6 +70,7 @@ class getMuse:
         # while(not my_file.exists()):
         #     print(my_file.exists())
         #     time.sleep(1)
+        time.sleep(5)
         print("start")
-        subprocess.call("~/Code/SciFair/src/bash/moveDownload.sh", shell=True)
+        subprocess.call("/home/berk/Code/SciFair/src/bash/moveDownload.sh", shell=False)
         print("end")

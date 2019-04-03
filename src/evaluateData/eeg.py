@@ -25,9 +25,10 @@ sys.path.remove("..")
 
 class eeg:
     def __init__(self, model, fileN):
+        basePath = "/home/berk/Code/SciFair/src"
         self.EPOCH_LENGTH = 30*256
         # self.PERCENTAGE_TRAIN = 0.9
-        self.rawData = hp.get_data(glob.glob('../assets/new/*EEG.csv')[0], column_name='eeg_2')
+        self.rawData = hp.get_data(glob.glob(basePath + '/assets/new/FEEG.csv')[0], column_name='eeg_2')
         # self.rawData, _ = wfdb.rdsamp("../../mitEEGData/slp" + fileN, channels=[2])
         self.fileN = fileN
         # 61, 37
@@ -169,53 +170,53 @@ class eeg:
 
         return score[0]
 
-names = [
-    "01a",
-    "01b",
-    "02a",
-    "02b",
-    "03",
-    "04",
-    "14",
-    "16",
-    "32",
-    "37",
-    "41",
-    "45",
-    "48",
-    "59",
-    "60",
-    "61",
-    "66",
-    "67x",
-]
+# names = [
+#     "01a",
+#     "01b",
+#     "02a",
+#     "02b",
+#     "03",
+#     "04",
+#     "14",
+#     "16",
+#     "32",
+#     "37",
+#     "41",
+#     "45",
+#     "48",
+#     "59",
+#     "60",
+#     "61",
+#     "66",
+#     "67x",
+# ]
 
-scores = []
+# scores = []
 
-actual = [
-    0,
-    0,
-    1,
-    0,
-    1,
-    1,
-    1,
-    1,
-    0,
-    1,
-    0,
-    0,
-    1,
-    1,
-    1,
-    1,
-    1,
-    0,
-]
+# actual = [
+#     0,
+#     0,
+#     1,
+#     0,
+#     1,
+#     1,
+#     1,
+#     1,
+#     0,
+#     1,
+#     0,
+#     0,
+#     1,
+#     1,
+#     1,
+#     1,
+#     1,
+#     0,
+# ]
 
-# for i in names:
-eegN = eeg("ann", "_")
-scores.append(eegN.getResult())
+# # for i in names:
+# eegN = eeg("ann", "_")
+# scores.append(eegN.getResult())
 
 # correct = 0
 

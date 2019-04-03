@@ -6,12 +6,13 @@ import client
 import getMuse
 import evaluate
 
-
 mongoClient = client.client()
 
 while(True):
     if(mongoClient.checkNewData()):
-        # museData = getMuse.getMuse()
+        museData = getMuse.getMuse()
+
+        time.sleep(2)
 
         evaluater = evaluate.evaluate()
         results = evaluater.getResults(mongoClient.getNewData("Epworth"), mongoClient.getNewData("stopBang"), mongoClient.getNewData("weights"))
